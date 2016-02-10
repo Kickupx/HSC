@@ -1,0 +1,20 @@
+{
+    "name": "kickupx/hsc",
+    "description": "Hierarchal String Config, for dealing with large strings in config",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Kickupx",
+            "email": "Kickupx@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "HSC\\": "src/HSC"
+        }
+    }
+}
