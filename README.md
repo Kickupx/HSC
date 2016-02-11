@@ -12,7 +12,7 @@ Really simple
 ======
 </body>
 
->>>>> /NAME
+\>\>\>\>\> /NAME
 
 Where NAME is the name of the config. Normal characters, numbers, _ and . are recognized
 ===== denotes where insertion is meant to happen.
