@@ -18,7 +18,7 @@ class Document
      * Document constructor.
      * @param $entries
      */
-    public function __construct(array $entries)
+    public function __construct(array $entries = [])
     {
         $this->entries = $entries;
     }
@@ -43,6 +43,10 @@ class Document
     public function isChanged()
     {
         return $this->changed;
+    }
+
+    public function addEntry(Entry $entry) {
+        $this->get($entry->name, $entry->str_start, $entry->str_start);
     }
 
     /**
