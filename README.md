@@ -8,9 +8,9 @@ Really simple
 
 <<<<< NAME
 
-<body>
+\<body\>
 ======
-</body>
+\</body\>
 
 \>\>\>\>\> /NAME
 
