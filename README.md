@@ -28,7 +28,7 @@ And last row denotes the end. Notice name is required.
 
 Dealing with this is done using the Parser and Document class.
 
-##Parse
+## Parse
 
  ```php
  $code =
