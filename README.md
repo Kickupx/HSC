@@ -8,13 +8,13 @@ Really simple
 
 ```html
 
-\<\<\<\<\< NAME
+<<<<< NAME
 
 <body>
 ======
 </body>
 
-\>\>\>\>\> /NAME
+>>>>> /NAME
 
 ```
 
