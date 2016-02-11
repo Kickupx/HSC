@@ -51,7 +51,7 @@ Dealing with this is done using the Parser and Document class.
  ```
  
  
- ##Get entries
+ ## Get entries
  
  ```php
  $doc->get('Config');
