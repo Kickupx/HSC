@@ -24,7 +24,7 @@ class Document
     }
 
 
-    function get($name, $def_start, $def_end) {
+    function get($name, $def_start = '', $def_end = '') {
         if(array_key_exists($name, $this->entries))
             return $this->entries[$name];
         $entry = new Entry();

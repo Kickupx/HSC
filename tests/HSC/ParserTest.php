@@ -11,7 +11,7 @@ namespace HSC;
 
 class ParserTest extends \PHPUnit_Framework_TestCase
 {
-    private $entries;
+    private $doc;
 
     function setUp() {
         $code =
@@ -30,17 +30,17 @@ class ParserTest extends \PHPUnit_Framework_TestCase
 
             ";
         $parser = new Parser();
-        $this->entries = $parser->parse($code);
+        $this->doc = $parser->parse($code);
     }
 
     private function assertHSCText($name, $start, $end) {
-        $entries = $this->entries;
+        $entries = $this->doc->getEntries();
 
-        $this->assertContains($entries, $name);
-        $this->assertInstanceOf($entries[$name], Entry::class);
+        $this->assertArrayHasKey($name, $entries);
+        $this->assertInstanceOf(Entry::class, $entries[$name]);
 
         $config = $entries[$name];
-        $this->assertEqual($config->name, $name);
+        $this->assertSame($config->name, $name);
         $this->assertContains($config->str_start, $start);
         $this->assertContains($config->str_end, $end);
     }
@@ -51,11 +51,5 @@ class ParserTest extends \PHPUnit_Framework_TestCase
 
     public function testSuper() {
         $this->assertHSCText('Super', 'Start', 'End');
-    }
-
-    public function testDocumentHelper() {
-        $code = "";
-        $parser = new Parser();
-        $this->assertInstanceof($code->parseWithDoc($code), Document::class);
     }
 }
