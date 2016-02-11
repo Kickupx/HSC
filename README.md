@@ -51,21 +51,21 @@ Dealing with this is done using the Parser and Document class.
  ```
  
  
- ## Get entries
+## Get entries
  
  ```php
  $doc->get('Config');
  $doc->get('Config', 'default start', 'default end');
  ```
  
- ##Add entries
+##Add entries
  
  ```php
  $doc->addEntry(new Entry('Config');
  $doc->addEntry(new Entry('Config', 'default start', 'default end'));
  ```
 
- ##Serializing
+##Serializing
 
  ```php
  $doc->__toString();
