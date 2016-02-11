@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "kickupx/waiting-for": "^1.0"
+        "kickupx/waiting-for": "^1.0.1"
     },
     "autoload": {
         "psr-4": {

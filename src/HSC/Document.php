@@ -46,7 +46,7 @@ class Document
     }
 
     public function addEntry(Entry $entry) {
-        $this->get($entry->name, $entry->str_start, $entry->str_start);
+        $this->get($entry->name, $entry->str_start, $entry->str_end);
     }
 
     /**

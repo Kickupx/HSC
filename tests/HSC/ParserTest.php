@@ -41,8 +41,8 @@ class ParserTest extends \PHPUnit_Framework_TestCase
 
         $config = $entries[$name];
         $this->assertSame($config->name, $name);
-        $this->assertContains($config->str_start, $start);
-        $this->assertContains($config->str_end, $end);
+        $this->assertContains($start, $config->str_start);
+        $this->assertContains($end, $config->str_end);
     }
 
     public function testConfig() {

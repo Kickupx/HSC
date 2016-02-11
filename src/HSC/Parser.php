@@ -38,9 +38,9 @@ class Parser
             switch($this->state) {
                 case State::Name: throw new \Exception('Expected name but got ====='); break;
                 case State::Middle: {
-                    $this->entry->str_start = substr($this->str, $this->str_start, $capture[1]);
-                    $this->state = State::NewRow;
-                    $this->nextState = State::End;
+                    $this->entry->str_start = substr($this->str, $this->str_start, $capture[1] - $this->str_start);
+                    $this->str_start = $capture[1] + strlen($capture[0]);
+                    $this->state = State::End;
                 }
             }
         });
@@ -50,7 +50,7 @@ class Parser
             switch($this->state) {
                 case State::Name: throw new \Exception('Is waiting for name Encountered <<<<<...'); break;
                 case State::End: {
-                    $this->entry->str_end = substr($this->str, $this->str_start, $capture[1]);
+                    $this->entry->str_end = substr($this->str, $this->str_start, $capture[1] - $this->str_start);
                     $this->state = State::EndName; break;
                 }
             }
@@ -76,7 +76,7 @@ class Parser
             }
         });
 
-        $regexes->add("/\n|\r|\n\r|\r\n/", function(array $capture) {
+        $regexes->add("/\n\r|\r\n|\n|\r/", function(array $capture) {
             $this->log('new_row', $capture);
             switch($this->state) {
                 case State::Name: throw new \Exception('Expecting a name before line break'); break;
@@ -105,10 +105,12 @@ class Parser
     }
 
     private function log($name, array $capture) {
-        unset($capture['delegate']);
+        /**
+         * unset($capture['delegate']);
         echo $this->state . "\n";
         echo $name;
         echo ': ';
         print_r($capture);
+         */
     }
 }

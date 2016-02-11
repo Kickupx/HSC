@@ -41,4 +41,14 @@ class DocumentTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($entry->str_end, '');
         $this->assertTrue($doc->isChanged());
     }
+
+    public function testAddEntry() {
+        $doc = $this->doc;
+        $doc->addEntry(new Entry('second', 'start', 'end'));
+        $entry = $doc->get('second');
+        $this->assertInstanceOf(Entry::class, $entry);
+        $this->assertSame($entry->name, 'second');
+        $this->assertSame($entry->str_start, 'start');
+        $this->assertSame($entry->str_end, 'end');
+    }
 }
