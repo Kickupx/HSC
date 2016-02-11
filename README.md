@@ -8,9 +8,11 @@ Really simple
 
 <<<<< NAME
 
-\<body\>
+```html
+<body>
 ======
-\</body\>
+</body>
+```
 
 \>\>\>\>\> /NAME
 
